@@ -7,9 +7,9 @@ export const globalStyles = (
       body {
         padding: 1rem 1rem;
         margin: 0;
-        background: teal;
+        background: white;
         min-height: 100%;
-        color: white;
+        color: black;
         font-family: Helvetica, Arial, sans-serif;
         font-size: 24px;
       }
