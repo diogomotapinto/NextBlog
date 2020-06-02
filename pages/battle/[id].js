@@ -56,7 +56,7 @@ const getPaths = async () => {
 const getContent = async (id) => {
   const { items } = await getData();
   const elems = items.map(({ fields }) => fields);
-  return elems.filter(({ alt }) => alt === id).pop();
+  return elems.find(({ alt }) => alt === id);
 };
 
 export async function getStaticPaths() {

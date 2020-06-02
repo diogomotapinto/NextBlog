@@ -11,7 +11,7 @@ app.prepare().then(() => {
 
   server.use(express.json());
 
-  server.use(express.urlencoded());
+  server.use(express.urlencoded({ extended: true }));
 
   server.all("*", (req, res) => {
     return handle(req, res);
