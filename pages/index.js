@@ -22,7 +22,7 @@ const getLinks = async () => {
   const elems = items.map(({ fields }) => fields);
   return elems.map(({ alt }) => {
     return {
-      url: `/battle/${alt}`,
+      url: `/posts/${alt}`,
       alt,
     };
   });
