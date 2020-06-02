@@ -1,4 +1,4 @@
-# Custom Express Server example
+# NextBlog
 
 Install it and run:
 
@@ -9,4 +9,3 @@ npm run dev
 yarn
 yarn dev
 ```
-# NextBlog
