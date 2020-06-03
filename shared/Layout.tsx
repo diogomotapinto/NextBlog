@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "@emotion/styled";
 
 const Container = styled.div`
@@ -11,7 +11,11 @@ const Header = styled.h1`
   padding-left: 1em;
 `;
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+  children?: ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
       <Header>Mlog</Header>

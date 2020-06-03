@@ -1,0 +1,5 @@
+type Person @db(name: "person") {
+  id: Int! @id
+  email: String!
+  username: String!
+}

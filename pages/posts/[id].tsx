@@ -4,6 +4,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types";
 import moment from "moment";
 import styled from "@emotion/styled";
+import { GetStaticProps, GetStaticPaths } from "next";
 
 const Header = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ const Body = styled.div`
 
 const options = {
   renderNode: {
-    [BLOCKS.EMBEDDED_ASSET]: (node) => {
+    [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
       const { url } = node.data.target.fields.file;
       const alt = node.data.target.fields.title;
       return <img src={url} alt={alt} />;
@@ -59,21 +60,21 @@ const getContent = async (id) => {
   return elems.find(({ alt }) => alt === id);
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   // Return a list of possible value for id
   const paths = await getPaths();
   return {
     paths,
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   // Fetch necessary data for the blog post using params.id
   const content = await getContent(params.id);
   return {
     props: { params, content },
   };
-}
+};
 
 export default Page;
