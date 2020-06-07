@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "@emotion/styled";
+import Head from "next/head";
 
 const Container = styled.div`
   width: 100%;
@@ -8,7 +9,11 @@ const Container = styled.div`
 `;
 
 const Header = styled.h1`
-  padding-left: 1em;
+  display: inline-block;
+  margin-top: 0;
+  &:hover {
+    color: cornflowerblue;
+  }
 `;
 
 interface LayoutProps {
@@ -18,7 +23,11 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
-      <Header>Mlog</Header>
+      <Head>
+        <title>Life Of Mota</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <Header>Blog</Header>
       <Container>{children}</Container>
     </div>
   );

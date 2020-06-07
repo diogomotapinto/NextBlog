@@ -2,7 +2,7 @@ import NextApp from "next/app";
 import { CacheProvider } from "@emotion/core";
 import { AppProps } from "next/app";
 import { cache } from "emotion";
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { globalStyles } from "../shared/styles";
 
 export default ({ Component, pageProps }: AppProps) => {

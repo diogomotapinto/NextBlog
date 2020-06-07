@@ -1,40 +1,32 @@
-import Link from "next/link";
 import { getData } from "../services/contentful";
 import styled from "@emotion/styled";
 import Layout from "../shared/Layout";
-import moment from "moment";
+import Post from "./Components/Post";
 
-const List = styled.ul`
-  list-style: none;
-
-  a {
-    text-decoration: none;
-    color: cornflowerblue;
-    font-size: 2em;
+const List = styled.div`
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 300px);
+  grid-gap: 1em;
+  @media (max-width: 1050px) {
+    grid-template-columns: repeat(2, 300px);
   }
-
-  p {
-    font-size: 1em;
+  @media (max-width: 650px) {
+    grid-template-columns: repeat(1, 300px);
+    min-width: 300px;
   }
-`;
-
-const SmallText = styled.p`
-  font-size: 0.5em;
 `;
 
 export default function Home({ links }) {
   return (
     <Layout>
       <List>
-        {links.map((data, index) => (
-          <li key={index}>
-            <Link href={data.url}>
-              <a>{data.title}</a>
-            </Link>
-            <SmallText>{moment(data.date).format("MMM Do YY")}</SmallText>
-            <p>{data.description}</p>
-          </li>
-        ))}
+        {links
+          .sort((a, b) => (a.date < b.date ? 1 : -1))
+          .map((data, index) => (
+            <Post key={index} {...data}></Post>
+          ))}
       </List>
     </Layout>
   );
@@ -43,13 +35,15 @@ export default function Home({ links }) {
 const getLinks = async () => {
   const { items } = await getData();
   const elems = items.map(({ fields }) => fields);
-  return elems.map(({ alt, description, date, title }) => {
+
+  return elems.map(({ alt, description, date, title, image }) => {
     return {
       url: `/posts/${alt}`,
       alt,
       title,
       description,
       date,
+      image: image.fields.file.url,
     };
   });
 };
