@@ -1,7 +1,7 @@
 import { getData } from "../services/contentful";
 import styled from "@emotion/styled";
 import Layout from "../shared/Layout";
-import Post from "./Components/Post";
+import Post from "../Components/Post";
 
 const List = styled.div`
   width: 100%;
