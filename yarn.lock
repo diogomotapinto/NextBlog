@@ -1145,11 +1145,6 @@
   resolved "https://registry.yarnpkg.com/@prisma/cli/-/cli-2.0.0-beta.7.tgz#3184dd350b24d5eeee86a20408d366e5ce564d5a"
   integrity sha512-Cjz7h3lfG3mFb9KMSEISe1/lgtvsMgq4EViqBJuysTj6BTDNbVMx+rSQTOdY9+8xJFGUkWszE+aAyHRFEcKgAA==
 
-"@prisma/client@^2.0.0-beta.7":
-  version "2.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.0.0-beta.7.tgz#0546b0ef8cdd8489bb648f22b554414085852726"
-  integrity sha512-sJg5fK8tgf9GsQ/doWqMyhwvq34eWCvyDnsO9CtgK8m7qSvBgHKA/ivfrkDKQWPpuzhm1kJlzs9wctqEadE6Yw==
-
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
@@ -4053,9 +4048,9 @@ minimatch@^3.0.4:
     brace-expansion "^1.1.7"
 
 minimist@^1.2.0, minimist@^1.2.5, minimist@~1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
+  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
 minipass-collect@^1.0.2:
   version "1.0.2"
